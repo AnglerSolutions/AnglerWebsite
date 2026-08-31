@@ -191,7 +191,7 @@ To improve SEO further, consider adding:
 ## Contact
 
 For questions about this website or to request modifications, contact:
-- Email: info@anglersolutions.com
+- Email: anglersolutions.software@gmail.com
 - Phone: (555) 123-4567
 
 ---
