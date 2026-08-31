@@ -744,6 +744,67 @@ a:hover {
     margin-bottom: 0.5rem;
 }
 
+/* ===== Industrial Expertise Section ===== */
+.industrial-expertise-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.industrial-expertise-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.industrial-expertise-section > p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.05rem;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .expertise-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.expertise-card {
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.expertise-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+}
+
+.expertise-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.expertise-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
 /* ===== Stats Section ===== */
 .stats-section {
     padding: 80px 0;
