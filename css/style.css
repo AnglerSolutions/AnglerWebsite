@@ -102,13 +102,7 @@ a:hover {
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--primary-color);
-    display: none;
-}
-
-@media (min-width: 768px) {
-    .company-name {
-        display: inline;
-    }
+    display: inline;
 }
 
 .nav-menu {
@@ -118,8 +112,32 @@ a:hover {
     align-items: center;
 }
 
+.nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-white);
+    padding: 1rem 20px;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+    z-index: 999;
+}
+
 @media (min-width: 768px) {
     .nav-menu {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .nav-menu.active {
         display: flex;
     }
 }
@@ -165,6 +183,18 @@ a:hover {
     background-color: var(--primary-color);
     border-radius: 2px;
     transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(11px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-11px);
 }
 
 /* ===== Buttons ===== */
