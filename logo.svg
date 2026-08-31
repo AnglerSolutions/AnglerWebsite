@@ -1,0 +1,25 @@
+<svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- Logo mark -->
+  <g>
+    <!-- Blue geometric shape - angled lines representing precision and direction -->
+    <path d="M 15 25 L 25 15 L 28 15 L 18 25 Z" fill="#0066cc" stroke="#0066cc" stroke-width="1.5"/>
+    <path d="M 15 25 L 18 35 L 15 35 Z" fill="#0066cc"/>
+    
+    <!-- Green accent - representing growth and reliability -->
+    <path d="M 25 15 L 35 5 L 38 5 L 28 15 Z" fill="#00a366" stroke="#00a366" stroke-width="1.5"/>
+    
+    <!-- Orange accent - representing innovation -->
+    <path d="M 18 25 L 28 15 L 31 15 L 21 25 Z" fill="#ff6b35" opacity="0.9"/>
+    
+    <!-- Central vertical line - representing stability -->
+    <line x1="23" y1="10" x2="23" y2="36" stroke="#0066cc" stroke-width="2" opacity="0.7"/>
+  </g>
+  
+  <!-- Company name text -->
+  <text x="45" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#0066cc">
+    Angler
+  </text>
+  <text x="45" y="52" font-family="Arial, sans-serif" font-size="11" letter-spacing="1" fill="#00a366">
+    SOLUTIONS
+  </text>
+</svg>
