@@ -1,5 +1,4 @@
 {
   "buildCommand": "",
-  "cleanUrls": true,
-  "framework": "html"
+  "cleanUrls": true
 }
