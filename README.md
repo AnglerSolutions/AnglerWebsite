@@ -111,16 +111,63 @@ Edit CSS variables in `css/style.css`:
 
 ### Contact Form Setup
 
-The contact form currently logs to the browser console. To enable email functionality:
+The contact form is configured to send emails via a Vercel serverless function using Gmail SMTP.
 
-1. **Option A: Formspree (Recommended)**
-   - Visit [formspree.io](https://formspree.io)
-   - Create account and new form
-   - Replace form action in `contact.html`
+#### Prerequisites
+- Gmail account with 2-Factor Authentication enabled
+- Vercel project connected to this GitHub repository
 
-2. **Option B: Custom Backend**
-   - Uncomment the fetch code in `js/script.js`
-   - Set up your backend endpoint to handle submissions
+#### Setup Instructions
+
+1. **Generate Gmail App Password**
+   - Go to [myaccount.google.com/security](https://myaccount.google.com/security)
+   - Enable 2-Factor Authentication if not already enabled
+   - Go to "App passwords" (near the bottom under "Signing in to Google")
+   - Select "Mail" and "Windows Computer" (or your platform)
+   - Copy the 16-character password generated
+
+2. **Add Environment Variables to Vercel**
+   - Go to your Vercel project dashboard
+   - Click "Settings" → "Environment Variables"
+   - Add two new variables:
+     - `GMAIL_USER`: Your Gmail address (e.g., `anglersolutions.software@gmail.com`)
+     - `GMAIL_PASSWORD`: Your 16-character Gmail App Password
+   - Click "Save"
+
+3. **Deploy**
+   - Push changes to GitHub (already done)
+   - Vercel will automatically redeploy with the new environment variables
+   - The contact form will now send emails to your Gmail inbox
+
+#### How It Works
+
+- Contact form submissions are sent to `/api/send-email` (serverless function)
+- The function validates the form data and sends an email via Gmail SMTP
+- The sender's email is included in the reply-to field for easy responses
+- No external services or dependencies beyond nodemailer
+
+#### Testing Locally (Optional)
+
+To test the email functionality locally:
+
+1. Create `.env.local` file in the project root:
+   ```
+   GMAIL_USER=your-email@gmail.com
+   GMAIL_PASSWORD=your-16-char-app-password
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Use a local development server (this won't send real emails without additional setup, but will help test the form validation)
+
+#### Troubleshooting
+
+- **"Error sending email" message**: Check that environment variables are set correctly in Vercel
+- **Emails not arriving**: Check Gmail spam folder, or ensure GMAIL_USER is correct
+- **Authentication fails**: Verify you're using an App Password, not your regular Gmail password
 
 ## Performance
 

@@ -14,5 +14,8 @@
     "web-development"
   ],
   "author": "Angler Solutions",
-  "license": "Proprietary"
+  "license": "Proprietary",
+  "dependencies": {
+    "nodemailer": "^6.9.7"
+  }
 }

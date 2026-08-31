@@ -52,20 +52,28 @@ function handleContactForm() {
             return;
         }
 
-        // Here you would typically send the form data to a server
-        // For now, we'll show a success message
-        console.log('Form data:', data);
-        
-        showFormMessage('Thank you! We\'ll be in touch within 24 hours.', 'success');
-        form.reset();
+        // Show loading state
+        showFormMessage('Sending your message...', 'info');
 
-        // In a real application, you would send this to your backend
-        // Example:
-        // fetch('/api/contact', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(data)
-        // })
+        // Send form data to serverless function
+        fetch('/api/send-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                showFormMessage('Thank you! We\'ll be in touch within 24 hours.', 'success');
+                form.reset();
+            } else {
+                showFormMessage('Error sending message. Please try again.', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showFormMessage('Error sending message. Please try again.', 'error');
+        });
     });
 }
 
