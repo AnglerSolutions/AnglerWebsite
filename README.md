@@ -39,6 +39,7 @@ AnglerWebsite/
 │   └── script.js
 ├── Logos/
 │   └── [Logo files]
+├── vercel.json
 ├── .gitignore
 └── README.md
 ```
@@ -50,37 +51,39 @@ AnglerWebsite/
 - **Vanilla JavaScript**: No frameworks needed
 - **Responsive Design**: Mobile-first approach
 
-## Deployment to GitHub Pages
+## Deployment to Vercel
 
 ### Prerequisites
 - GitHub account
-- Repository already pushed to GitHub (code is already online)
+- Vercel account (free)
 
 ### Steps to Deploy
 
-1. **Enable GitHub Pages**
-   - Go to your repository: `https://github.com/AnglerSolutions/AnglerWebsite`
-   - Click **Settings** (gear icon)
-   - Scroll down to **Pages** section
-   - Under "Source", select **Deploy from a branch**
-   - Select branch: **main**
-   - Select folder: **/ (root)**
-   - Click **Save**
+1. **Push to GitHub**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit: Angler Solutions website"
+   git branch -M main
+   git remote add origin https://github.com/yourusername/AnglerWebsite.git
+   git push -u origin main
+   ```
 
-2. **Access Your Live Site**
-   - GitHub will provide your site URL (usually `https://AnglerSolutions.github.io/AnglerWebsite/`)
-   - Wait 1-2 minutes for the site to build and deploy
-   - Your site will be live automatically!
+2. **Deploy on Vercel**
+   - Visit [vercel.com](https://vercel.com)
+   - Sign in with GitHub
+   - Click "New Project"
+   - Select the `AnglerWebsite` repository
+   - Accept default settings (Vercel auto-detects HTML project)
+   - Click "Deploy"
 
-3. **Configure Custom Domain (Optional)**
-   - In the same **Pages** section, find "Custom domain"
-   - Enter your domain (e.g., `www.anglersolutions.com`)
-   - Click **Save**
-   - Update your domain's DNS records to point to GitHub Pages (GitHub will show exact instructions)
-   - GitHub will automatically provision an SSL certificate
+3. **Configure Custom Domain**
+   - Go to project settings on Vercel
+   - Add your custom domain
+   - Update DNS records as instructed by Vercel
 
 ### Automatic Deployment
-Every time you push to the `main` branch on GitHub, your site automatically updates within seconds. No additional service needed!
+Every time you push to the `main` branch on GitHub, Vercel will automatically rebuild and deploy your site.
 
 ## Customization
 
@@ -142,10 +145,9 @@ The contact form currently logs to the browser console. To enable email function
 - Ensure team information is accurate
 
 ### Monitoring
+- Use Vercel Analytics to track performance
 - Monitor SEO with Google Search Console
-- Add Google Analytics for traffic insights
 - Check for broken links regularly
-- Use GitHub's built-in traffic analytics (Insights → Traffic)
 
 ## SEO Optimization
 
