@@ -1,17 +1,16 @@
-<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-  <!-- Logo mark only - geometric angled design -->
-  <g>
-    <!-- Blue geometric shape - angled lines representing precision and direction -->
-    <path d="M 15 25 L 25 15 L 28 15 L 18 25 Z" fill="#0066cc" stroke="#0066cc" stroke-width="1.5"/>
-    <path d="M 15 25 L 18 35 L 15 35 Z" fill="#0066cc"/>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- Hexagonal cube logo in brand blue -->
+  <g fill="#0066cc">
+    <!-- Top face of hexagon -->
+    <polygon points="50,15 75,28 75,54 50,67 25,54 25,28"/>
     
-    <!-- Green accent - representing growth and reliability -->
-    <path d="M 25 15 L 35 5 L 38 5 L 28 15 Z" fill="#00a366" stroke="#00a366" stroke-width="1.5"/>
+    <!-- Left side face -->
+    <polygon points="25,28 25,54 12,61 12,35"/>
     
-    <!-- Orange accent - representing innovation -->
-    <path d="M 18 25 L 28 15 L 31 15 L 21 25 Z" fill="#ff6b35" opacity="0.9"/>
+    <!-- Right side face -->
+    <polygon points="75,28 88,35 88,61 75,54"/>
     
-    <!-- Central vertical line - representing stability -->
-    <line x1="23" y1="10" x2="23" y2="36" stroke="#0066cc" stroke-width="2" opacity="0.7"/>
+    <!-- Inner diamond/cube detail -->
+    <polygon points="50,35 60,41 50,47 40,41" fill="#ffffff" opacity="0.3"/>
   </g>
 </svg>
