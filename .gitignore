@@ -1,0 +1,29 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build files
+dist/
+build/
+.env.local
+.env.*.local
+
+# IDE
+*.iml
+
+# Misc
+.cache/

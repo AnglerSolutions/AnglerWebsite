@@ -1,0 +1,18 @@
+{
+  "name": "angler-solutions-website",
+  "version": "1.0.0",
+  "description": "Professional website for Angler Solutions - Bespoke software solutions and automation",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server",
+    "preview": "npx http-server"
+  },
+  "keywords": [
+    "software",
+    "solutions",
+    "automation",
+    "web-development"
+  ],
+  "author": "Angler Solutions",
+  "license": "Proprietary"
+}
