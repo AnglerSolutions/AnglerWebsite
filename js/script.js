@@ -1,6 +1,7 @@
 (function(){
   var blocks = Array.prototype.slice.call(document.querySelectorAll('.lang-block'));
   var buttons = Array.prototype.slice.call(document.querySelectorAll('[data-lang-btn]'));
+  var themeButtons = Array.prototype.slice.call(document.querySelectorAll('[data-theme-toggle]'));
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function revealAll(container){
@@ -31,6 +32,22 @@
     btn.addEventListener('click', function(){ setLang(btn.getAttribute('data-lang-btn')); });
   });
 
+  function setTheme(theme, save){
+    document.documentElement.setAttribute('data-theme', theme);
+    themeButtons.forEach(function(btn){
+      var isDark = theme === 'dark';
+      btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      btn.textContent = isDark ? '☀' : '◐';
+    });
+    if (save) { try { localStorage.setItem('al_theme', theme); } catch(e){} }
+  }
+
+  themeButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true);
+    });
+  });
+
   var stored = null;
   try { stored = localStorage.getItem('al_lang'); } catch(e){}
   var initial = stored;
@@ -41,4 +58,8 @@
     else initial = 'en';
   }
   setLang(initial);
+
+  var savedTheme = null;
+  try { savedTheme = localStorage.getItem('al_theme'); } catch(e){}
+  setTheme(savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'), false);
 })();
